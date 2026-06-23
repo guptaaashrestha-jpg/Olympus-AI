@@ -1,0 +1,126 @@
+/* News Command Palette Modal */
+.news-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+  overflow-y: auto;
+}
+
+.command-palette {
+  width: 100%;
+  max-width: 800px;
+  background: rgba(15, 15, 18, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  font-family: 'Fira Code', monospace;
+  color: #e0e0e0;
+}
+
+.cmd-header {
+  background: rgba(25, 25, 30, 1);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cmd-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.cmd-dot.red { background: #ff5f56; }
+.cmd-dot.yellow { background: #ffbd2e; }
+.cmd-dot.green { background: #27c93f; }
+
+.cmd-title {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 12px;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+.cmd-body {
+  padding: 30px;
+}
+
+.cmd-input-line {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.cmd-prompt { color: #00ffcc; font-weight: bold; }
+.cmd-command { color: #fff; }
+.cmd-cursor { color: #00ffcc; font-weight: bold; }
+
+.news-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 24px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.news-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.news-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.news-date { color: #666; }
+.news-tag { font-weight: bold; }
+.news-tag.feature { color: #00ffcc; }
+.news-tag.update { color: #bd93f9; }
+.news-tag.event { color: #ff79c6; }
+
+.news-content {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.cmd-footer {
+  background: rgba(20, 20, 24, 1);
+  padding: 12px 30px;
+  font-size: 12px;
+  color: #666;
+  text-align: right;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+kbd {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  color: #aaa;
+}

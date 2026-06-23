@@ -1,0 +1,556 @@
+/* ═══════════════════════════════════════════════════════════════
+   CASE STUDIES STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Overlay override — vertically center the modal */
+.cs-overlay {
+  align-items: center !important;
+  padding-top: 0 !important;
+}
+
+/* Container */
+.cs-container {
+  width: 95%;
+  max-width: 1100px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: rgba(10, 10, 14, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(30px);
+  padding: 0;
+}
+
+/* Scrollbar styling */
+.cs-container::-webkit-scrollbar {
+  width: 6px;
+}
+.cs-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.cs-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.cs-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Header */
+.cs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 50px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: sticky;
+  top: 0;
+  background: rgba(10, 10, 14, 0.98);
+  backdrop-filter: blur(20px);
+  z-index: 2;
+  border-radius: 20px 20px 0 0;
+}
+
+.cs-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #00ffcc;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.cs-heading {
+  font-family: 'Space Grotesk', 'Archivo Narrow', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.cs-desc {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 15px;
+  color: #666;
+  margin: 8px 0 0;
+  letter-spacing: 0.5px;
+}
+
+.cs-close-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #888;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.cs-close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+/* Cards Grid */
+.cs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 30px 50px 20px;
+}
+
+/* Individual Card */
+.cs-card {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cs-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Image Section */
+.cs-image-wrap {
+  position: relative;
+  height: 100%;
+  min-height: 240px;
+  overflow: hidden;
+}
+
+.cs-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: saturate(0.8);
+}
+
+.cs-card:hover .cs-image {
+  opacity: 1;
+  transform: scale(1.05);
+  filter: saturate(1);
+}
+
+.cs-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 100%);
+  pointer-events: none;
+}
+
+.cs-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-family: 'Fira Code', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #000;
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+/* Body Section */
+.cs-body {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cs-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.cs-subtitle {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+}
+
+/* Prompt Block */
+.cs-prompt-block {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.cs-prompt-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.cs-prompt-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.cs-prompt-text {
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+  color: #ccc;
+  margin: 0;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* Metrics Row */
+.cs-metrics {
+  display: flex;
+  gap: 6px;
+}
+
+.cs-metric {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.cs-metric:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.cs-metric-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  display: block;
+}
+
+.cs-metric-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #666;
+  display: block;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+/* Expandable Details */
+.cs-details {
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 14px;
+}
+
+.cs-details p {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 14px;
+  color: #999;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.cs-toggle {
+  background: none;
+  border: none;
+  color: var(--cs-accent, #00ffcc);
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  padding: 8px 0;
+  text-align: left;
+  transition: opacity 0.2s ease;
+  align-self: flex-start;
+}
+
+.cs-toggle:hover {
+  opacity: 0.7;
+}
+
+/* Footer bar */
+.cs-footer-bar {
+  padding: 14px 50px;
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  color: #444;
+  text-align: right;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ─── Responsive ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .cs-card {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-image-wrap {
+    min-height: 180px;
+  }
+
+  .cs-grid {
+    padding: 20px 24px;
+  }
+
+  .cs-header {
+    padding: 30px 24px 20px;
+  }
+
+  .cs-heading {
+    font-size: 2rem;
+  }
+
+  .cs-metrics {
+    flex-wrap: wrap;
+  }
+
+  .cs-metric {
+    flex: 1 1 calc(50% - 3px);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ZOOM HINT ON IMAGE HOVER
+   ═══════════════════════════════════════════════════════════════ */
+.cs-zoom-hint {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.cs-image-wrap:hover .cs-zoom-hint {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Override: overlay should not block clicks when we have zoom */
+.cs-image-wrap .cs-image-overlay {
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 16px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   IMAGE LIGHTBOX
+   ═══════════════════════════════════════════════════════════════ */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+/* Scanline effect */
+.lightbox-scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 204, 0.015) 2px,
+    rgba(0, 255, 204, 0.015) 4px
+  );
+  z-index: 1;
+}
+
+/* Close button */
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Image wrapper */
+.lightbox-image-wrap {
+  position: relative;
+  z-index: 5;
+  max-width: 85vw;
+  max-height: 80vh;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  cursor: default;
+}
+
+.lightbox-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+/* Caption bar */
+.lightbox-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px 24px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lightbox-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px currentColor;
+  animation: pulseDot 2s infinite;
+}
+
+/* Corner accent lines */
+.lightbox-corner {
+  position: absolute;
+  z-index: 6;
+}
+
+.lightbox-corner.lt {
+  top: 60px;
+  left: 40px;
+  width: 60px;
+  height: 2px;
+  transform-origin: left;
+}
+
+.lightbox-corner.rt {
+  top: 60px;
+  right: 40px;
+  width: 2px;
+  height: 60px;
+  transform-origin: top;
+}
+
+.lightbox-corner.rb {
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 2px;
+  transform-origin: right;
+}
+
+.lightbox-corner.lb {
+  bottom: 40px;
+  left: 40px;
+  width: 2px;
+  height: 60px;
+  transform-origin: bottom;
+}
+
+/* Responsive lightbox */
+@media (max-width: 768px) {
+  .lightbox-image-wrap {
+    max-width: 95vw;
+  }
+
+  .lightbox-close {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .lightbox-corner {
+    display: none;
+  }
+}

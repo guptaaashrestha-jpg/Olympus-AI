@@ -1,0 +1,188 @@
+/* ═══════════════════════════════════════════════════════════════
+   PRICING SECTION STYLES (OLYMPUS THEME)
+   ═══════════════════════════════════════════════════════════════ */
+
+.pricing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.pricing-header {
+  text-align: center;
+  color: white;
+}
+
+.pricing-header h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 10px;
+  margin-bottom: 5px;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.pricing-header p {
+  font-family: 'Cinzel', serif;
+  color: #D4AF37;
+  letter-spacing: 4px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.pricing-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch; /* Forces all cards to be the same height */
+}
+
+/* Base Pricing Card */
+.pricing-card {
+  width: 340px;
+  background: rgba(4, 21, 15, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 40px 30px;
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* The Olympian Tier (Premium) */
+.pricing-card.olympian {
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.05) 0%, rgba(4, 21, 15, 0.8) 100%);
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
+}
+
+.pricing-card.olympian:hover {
+  box-shadow: 0 0 60px rgba(212, 175, 55, 0.3), inset 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+/* Glow aura for the Olympian tier */
+.pricing-card.olympian::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.4), transparent 70%);
+  opacity: 0.5;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.pricing-card.olympian:hover::before {
+  opacity: 1;
+}
+
+.pricing-tier {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.olympian .pricing-tier {
+  color: #D4AF37;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.pricing-price {
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #fff;
+  display: flex;
+  align-items:baseline;
+}
+
+.pricing-price span {
+  font-size: 1.2rem;
+  color: #888;
+  margin-left: 8px;
+  font-family: 'Cinzel', serif;
+}
+
+.pricing-desc {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.5;
+  min-height: 42px;
+}
+
+.pricing-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pricing-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.feature-check {
+  color: #D4AF37;
+  font-weight: bold;
+}
+
+.pricing-btn {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  font-family: 'Cinzel', serif;
+  font-weight: 800;
+  font-size: 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.pricing-btn.outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pricing-btn.outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+}
+
+.pricing-btn.solid {
+  background: linear-gradient(135deg, #D4AF37, #B8860B);
+  color: #000;
+  border: none;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.pricing-btn.solid:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+}

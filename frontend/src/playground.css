@@ -1,0 +1,416 @@
+/* ═══════════════════════════════════════════════════════════════
+   PREMIUM PLAYGROUND STYLES (THEME 1)
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --pg-bg: #04150F; /* Deep Luxury Emerald / Forest Green */
+  --pg-primary: #D4AF37; /* Classic Metallic Gold */
+  --pg-accent: #EAE0C8; /* Warm Pearl / Ivory */
+}
+
+.playground-overlay, .playground-overlay * {
+  font-family: 'Satisfy', cursive !important;
+}
+
+.playground-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--pg-bg);
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ─── Aurora Background ───────────────────────────────────────── */
+.pg-aurora-container {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.pg-aurora-blob {
+  position: absolute;
+  filter: blur(120px);
+  opacity: 0.4;
+  border-radius: 50%;
+  animation: float-blob 20s infinite ease-in-out alternate;
+}
+
+.pg-aurora-1 {
+  width: 60vw; height: 60vw;
+  background: var(--pg-primary);
+  top: -20%; left: -10%;
+  animation-delay: 0s;
+}
+
+.pg-aurora-2 {
+  width: 50vw; height: 50vw;
+  background: var(--pg-accent);
+  bottom: -20%; right: -10%;
+  animation-delay: -5s;
+}
+
+@keyframes float-blob {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(10%, 10%) scale(1.1); }
+  100% { transform: translate(-10%, 5%) scale(0.9); }
+}
+
+/* ─── Animated Grid ───────────────────────────────────────────── */
+.pg-grid-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  pointer-events: none;
+  z-index: 2;
+  mask-image: radial-gradient(circle at 50% 50%, black, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black, transparent 80%);
+  transition: opacity 1s ease;
+}
+
+/* ─── Mouse Spotlight ─────────────────────────────────────────── */
+.pg-mouse-spotlight {
+  position: fixed;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+/* ─── Header ──────────────────────────────────────────────────── */
+.pg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  z-index: 10;
+  background: rgba(9, 9, 11, 0.4);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pg-logo {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: -1px;
+}
+
+.pg-logo-accent {
+  color: var(--pg-primary);
+}
+
+.pg-close-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: 'Fira Code', monospace !important;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.pg-close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  border-color: var(--pg-primary);
+}
+
+/* ─── Main Content ────────────────────────────────────────────── */
+.pg-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding: 40px;
+  position: relative;
+  min-height: 80vh;
+}
+
+/* ─── Prompt Phase ────────────────────────────────────────────── */
+.pg-prompt-container {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  z-index: 10;
+}
+
+.pg-prompt-title {
+  font-family: 'Satisfy', cursive;
+  font-size: 4.5rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  background: linear-gradient(135deg, #fff 0%, #EAE0C8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+.pg-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 12px 12px 12px 32px;
+  width: 100%;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(20px);
+}
+
+.pg-input-wrapper:focus-within {
+  border-color: rgba(212, 175, 55, 0.5); /* Primary */
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.2), 0 30px 60px rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+.pg-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  outline: none;
+  padding: 16px 0;
+}
+
+.pg-input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.pg-submit-btn {
+  background: linear-gradient(135deg, var(--pg-primary), var(--pg-accent));
+  color: #fff;
+  border: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pg-submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+}
+
+/* ─── Suggestion Chips ────────────────────────────────────────── */
+.pg-chips-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  max-width: 800px;
+}
+
+.pg-chip {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 18px;
+  color: #aaa;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.pg-chip:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ─── Floating Background Widgets ─────────────────────────────── */
+.pg-floating-widget {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+/* ─── AI Thinking Sequence ────────────────────────────────────── */
+.pg-thinking-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 400px;
+  z-index: 20;
+}
+
+.pg-think-step {
+  font-size: 2.5rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #fff, #888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pg-think-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(212, 175, 55, 0.3);
+  border-top-color: var(--pg-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Result / Dashboard Materialization ──────────────────────── */
+.pg-dash-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 10;
+  padding-bottom: 40px;
+}
+
+/* The Morphed Header */
+.pg-morphed-header {
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 16px 32px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  backdrop-filter: blur(20px);
+}
+
+.pg-morphed-prompt {
+  font-family: 'Satisfy', cursive;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+}
+
+.pg-dash-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.pg-dash-metric-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glowing pulse effect at the end */
+.pg-glow-pulse {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  box-shadow: inset 0 0 40px rgba(212, 175, 55, 0);
+  transition: box-shadow 1s ease;
+  pointer-events: none;
+}
+.pg-dash-wrapper.glow-active .pg-glow-pulse {
+  box-shadow: inset 0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+.pg-dmc-label {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.pg-dmc-value {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+}
+
+.pg-dmc-trend {
+  font-size: 13px;
+  color: var(--pg-accent);
+  margin-top: 8px;
+}
+
+.pg-dash-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.pg-dash-chart, .pg-dash-feed {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
+.pg-log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pg-log-item {
+  display: flex;
+  gap: 16px;
+  font-size: 18px;
+}
+
+.pg-log-time {
+  color: #666;
+}
+
+.pg-log-msg {
+  color: #fff;
+}
