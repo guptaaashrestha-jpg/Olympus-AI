@@ -578,7 +578,7 @@ export const Dashboard = () => {
             viewport={{ once: false, amount: 0.3 }}
             transition={{ type: "spring", stiffness: 40, damping: 15, delay: 0.2 }}
           >
-            <img src="/core1.png" alt="Olympus Core Component" />
+            <img src="./core1.png" alt="Olympus Core Component" />
           </motion.div>
         </section>
 
@@ -604,7 +604,7 @@ export const Dashboard = () => {
             viewport={{ once: false, amount: 0.3 }}
             transition={{ type: "spring", stiffness: 40, damping: 15, delay: 0.2 }}
           >
-            <img src="/core2.png" alt="Data Pipeline" />
+            <img src="./core2.png" alt="Data Pipeline" />
           </motion.div>
         </section>
 
@@ -630,7 +630,7 @@ export const Dashboard = () => {
             viewport={{ once: false, amount: 0.3 }}
             transition={{ type: "spring", stiffness: 40, damping: 15, delay: 0.2 }}
           >
-            <img src="/core3.png" alt="Neural Network Structure" />
+            <img src="./core3.png" alt="Neural Network Structure" />
           </motion.div>
         </section>
       </main>
