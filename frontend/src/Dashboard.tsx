@@ -34,7 +34,7 @@ const CASE_STUDIES = [
     title: 'E-Commerce Dashboard',
     subtitle: 'Full inventory + sales analytics in 30 seconds',
     prompt: '"Build me a product inventory dashboard with sales charts and a REST API"',
-    image: '/case-ecommerce.png',
+    image: './case-ecommerce.png',
     color: '#00ffcc',
     metrics: [
       { label: 'API Endpoints', value: '3' },
@@ -49,7 +49,7 @@ const CASE_STUDIES = [
     title: 'IoT Monitoring Panel',
     subtitle: 'Real-time sensor feeds with threshold alerts',
     prompt: '"Create a sensor monitoring dashboard with temperature, humidity, and alert thresholds"',
-    image: '/case-iot.png',
+    image: './case-iot.png',
     color: '#ff9f43',
     metrics: [
       { label: 'Data Streams', value: '5' },
@@ -64,7 +64,7 @@ const CASE_STUDIES = [
     title: 'Social Analytics Engine',
     subtitle: 'Engagement metrics & trend visualization',
     prompt: '"I need an analytics dashboard showing engagement rates, follower growth, and top posts"',
-    image: '/case-social.png',
+    image: './case-social.png',
     color: '#ff007f',
     metrics: [
       { label: 'UI Components', value: '6' },
@@ -851,14 +851,14 @@ export const Dashboard = () => {
                 <HolographicCard
                   name="SHRESTHA S GUPTA"
                   role="LEAD ARCHITECT"
-                  image="/builder1.png"
+                  image="./builder1.png"
                   instagram="https://www.instagram.com/shrestha_s_gupta/"
                   color="#00ffcc"
                 />
                 <HolographicCard
                   name="MOHD. FAZAL"
                   role="FRONTEND SYNTHESIZER"
-                  image="/builder2.png"
+                  image="./builder2.png"
                   instagram="https://www.instagram.com/cholabhaturawithpyaaz/"
                   color="#ff007f"
                 />
